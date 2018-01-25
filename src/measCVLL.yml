@@ -1,0 +1,7 @@
+Rule them all:
+ experiment: HFLAV
+ inspire: DiLuzio:2017fdq
+ url: http://arxiv.org/abs/arXiv:1712.06572
+ values:
+  Delta_Ms: 1.1688(14)e-11
+  ACP_mix: -0.021 ± 0.031
