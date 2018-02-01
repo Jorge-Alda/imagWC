@@ -9,12 +9,18 @@
 \section{Imaginary Wilson coefficients and $R_K$ observables}
 \begin{figure}[H]
 \centering
-\includegraphics[width = 0.6\textwidth]{Figures/RK_im}
+\resizebox{0.6\textwidth}{!}{\input{Figures/RK_im.pgf}}
 \caption{Values of $R_K$ and $R_{K^*}$ whith imaginary Wilson coefficients.}
 \label{im:RK_im}
 \end{figure}
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{Figures/RK_re.pgf}}
+\caption{Values of $R_K$ and $R_{K^*}$ whith real Wilson coefficients.}
+\label{im:RK_re}
+\end{figure}
 
- Figure \ref{im:RK_im} shows the values of the ratios $R_K$ and $R_{K^*}$ in their respective $q^2$ ranges, when both Wilson coefficients $C_9$ and $C_{10}$ are imaginary, and also we assume $C_9 = -C_{10}$. In all cases the minimum value for the ratio is attained at the SM point $C_9 = -C_{10} =0$. The addition of non-zero imaginary Wilson coefficients results in larger values of $R_K$ and $R_{K^*}$, at odds with the experimental values $R_{K^{(*)}}^{\mathrm{exp}} < R_{K^{(*)}}^{\mathrm{SM}}$.
+ Figure \ref{im:RK_im} shows the values of the ratios $R_K$ and $R_{K^*}$ in their respective $q^2$ ranges, when both Wilson coefficients $C_9$ and $C_{10}$ are imaginary, and also we assume $C_9 = -C_{10}$. In all cases the minimum value for the ratio is attained at the SM point $C_9 = -C_{10} =0$. The addition of non-zero imaginary Wilson coefficients results in larger values of $R_K$ and $R_{K^*}$, at odds with the experimental values $R_{K^{(*)}}^{\mathrm{exp}} < R_{K^{(*)}}^{\mathrm{SM}}$. In contrast, when the Wilson coefficients are real as in Figure \ref{im:RK_re}, values of $R_{K^{(*)}} \sim 0.7$, as in the experimental measurements, are possible. 
 
 \begin{figure}[H]
 \centering
@@ -22,8 +28,14 @@
 \caption{Allowed regions for imaginary Wilson coefficients.}
 \label{im:fitim}
 \end{figure}
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{\input{Figures/fitre.pgf}}
+\caption{Allowed regions for real Wilson coefficients.}
+\label{im:fitre}
+\end{figure}
 
-In Figure \ref{im:fitim} we plot the allowed regions for imaginary values of $C_9$ and $C_{10}$ when fitting to measurements of a series of $b\to s \mu^+\mu^-$ observables. In the fit we have included the ratios $R_K$ and $R_{K^*}$, the angular observables $P_4'$ and $P_5'$ and the branching ratios $\mathrm{BR}(B_s\to \mu^+ \mu^-)$ and $\mathrm{BR}(B^0 \to \mu^+ \mu^-)$. The fit was carried by the software \texttt{flavio}, wich computes the $\chi^2$ function with each $(C_9, C_{10})$ pair. The global minimum of the $\chi^2$ was found at $C_9 = 0.31\,i,\ C_{10} = 0.29\;i$. The pull of the SM, defined as the probability that the SM scenario can describe the best fit assuming that $\Delta \chi^2 = \chi^2_{\mathrm{SM}} - \chi^2_{\mathrm{min}}$ follows a $\chi^2$ distribution with 5 degrees of freedom, is of just $2.1\times 10^{-5} \sigma$. That is, the SM result and the best fit are indistinguishable from an statistical point of view. The shaded regions in the plot are $1\sigma$ (darker pink) and $2\sigma$ (lighter pink) away from the best fit.
+In Figure \ref{im:fitim} we plot the allowed regions for imaginary values of $C_9$ and $C_{10}$ when fitting to measurements of a series of $b\to s \mu^+\mu^-$ observables. In the fit we have included the ratios $R_K$ and $R_{K^*}$, the angular observables $P_4'$ and $P_5'$. The fit was carried by the software \texttt{flavio}, wich computes the $\chi^2$ function with each $(C_9, C_{10})$ pair. The global minimum of the $\chi^2$ was found at $C_9 = 0.41\,i,\ C_{10} = 0.42\;i$. The pull of the SM, defined as the probability that the SM scenario can describe the best fit assuming that $\Delta \chi^2 = \chi^2_{\mathrm{SM}} - \chi^2_{\mathrm{min}}$ follows a $\chi^2$ distribution with 3 degrees of freedom, is of just $6\times 10^{-4} \sigma$. That is, the SM result and the best fit are indistinguishable from an statistical point of view. The shaded regions in the plot are $1\sigma$ (darker pink) and $2\sigma$ (lighter pink) away from the best fit. Compare this to the fit to real values of the Wilson coefficients, in Figure \ref{im:fitre}. Now the confidence regions are much tighter and do not include the SM point. In fact, the best fit ($C_9 = -1.37$, $C_{10} = 0.21$) improves the SM by $3.49 \sigma$.
 \section{Z' fit}
 \begin{figure}[H]
 \centering
@@ -31,7 +43,7 @@ In Figure \ref{im:fitim} we plot the allowed regions for imaginary values of $C_
 \caption{Bounds on $Z'$ parameter space imposed by $b\to s \mu^+ \mu^-$ decays and $B_s$ mixing.}\label{im:WCZ}
 \end{figure}
 
-Figure \ref{im:WCZ} shows the bounds on the $Z'$ mass $M_{Z'}$ and the imaginary coupling coupling $\lambda_{23}^Q$ (setting $\lambda_{22}^L=1$) imposed by $b\to s \mu^+ \mu^-$ decays and $B_s$ mixing. Blue lines correspond to the fit to $B_s$-mixing observables $\Delta M_s$ and $A_{\mathrm{CP}}^{\mathrm{mix}}$ (solid line: $\Delta \chi^2 = 1$, dashed lines $\Delta \chi^2 = 4$), red lines to $b\to s \mu^+ \mu^-$ as in Figure \ref{im:fitim} (solid line: $\Delta \chi^2 = 1$, dashed lines $\Delta \chi^2 = 4$), and green regions to the combined fit (dark green: $\Delta \chi^2 = 1$, medium green $\Delta \chi^2 = 4$, light green: $\Delta \chi^2 = 9$). For the $B_s$-mixing fit, the SM offers the best fit, while the best fits for the $b\to s \mu^+ \mu^-$ and global fits is ($M_{Z'} = 11.0\ \mathrm{TeV},\ \lambda_{23}^Q = 0.001\.i$), although the improvement with respect to the SM is negligible. In the low mass region ($M_{Z'} \lesssim 7\ \mathrm{TeV}$) the global fit is dominated by $b\to s \mu^+ \mu^-$ observables, and $B_s$-mixing becomes more important at larger masses. The allowed regions correspond to 'small' Wilson coefficients ($\mathrm{Im} C_{10} < 0.7$, $C_{bs}^{LL} > -3\times 10^{-4}$), except for a narrow region in the $B_s$ fit with $C_{bs}^{LL} \sim -2.7 \times 10^{-3}$.
+Figure \ref{im:WCZ} shows the bounds on the $Z'$ mass $M_{Z'}$ and the imaginary coupling coupling $\lambda_{23}^Q$ (setting $\lambda_{22}^L=1$) imposed by $b\to s \mu^+ \mu^-$ decays and $B_s$ mixing. Blue lines correspond to the fit to $B_s$-mixing observables $\Delta M_s$ and $A_{\mathrm{CP}}^{\mathrm{mix}}$ (solid line: $\Delta \chi^2 = 1$, dashed lines $\Delta \chi^2 = 4$), red lines to $b\to s \mu^+ \mu^-$ as in Figure \ref{im:fitim} plus the branching ratios $\mathrm{BR}(B_s\to \mu^+ \mu^-)$ and $\mathrm{BR}(B^0 \to \mu^+ \mu^-)$ (solid line: $\Delta \chi^2 = 1$, dashed lines $\Delta \chi^2 = 4$), and green regions to the combined fit (dark green: $\Delta \chi^2 = 1$, medium green $\Delta \chi^2 = 4$, light green: $\Delta \chi^2 = 9$). For the $B_s$-mixing fit, the SM offers the best fit, while the best fits for the $b\to s \mu^+ \mu^-$ and global fits is ($M_{Z'} = 11.0\ \mathrm{TeV},\ \lambda_{23}^Q = 0.001\.i$), although the improvement with respect to the SM is negligible. In the low mass region ($M_{Z'} \lesssim 7\ \mathrm{TeV}$) the global fit is dominated by $b\to s \mu^+ \mu^-$ observables, and $B_s$-mixing becomes more important at larger masses. The allowed regions correspond to 'small' Wilson coefficients ($\mathrm{Im} C_{10} < 0.7$, $C_{bs}^{LL} > -3\times 10^{-4}$), except for a narrow region in the $B_s$ fit with $C_{bs}^{LL} \sim -2.7 \times 10^{-3}$.
 \section{Leptoquark fit}
 \begin{figure}[H]
 \centering

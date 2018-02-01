@@ -65,7 +65,7 @@ def wc_LQ(yy, MS):
 	}
 
 flavio.measurements.read_file('measCVLL.yml')
-wc = flavio.WilsonCoefficients()
+wcObj = flavio.WilsonCoefficients()
 
 
 '''
@@ -94,12 +94,12 @@ exp = [3.03448275862069e-09, 3.620689655172414e-10, 0.652542372881356, 0.6813559
 uncTot = [1.0224162247111247e-09, 2.1633572944255006e-10, 0.09783105808975297, 0.1049727973615827, 0.09067364365960803, 0.32969017997333544, 0.23984462133464168, 1.1110302680969927e-12, 0.03128684613867722]
 
 
-observablesNP = [ ('BR(Bs->mumu)', wc), ('BR(B0->mumu)', wc), ('<Rmue>(B0->K*ll)', wc, 0.045, 1.1), ('<Rmue>(B0->K*ll)', wc, 1.1, 6.0), ('<Rmue>(B+->Kll)', wc, 1.0, 6.0), ('<P4p>(B0->K*mumu)', wc, 1.1, 6.0) , ('<P5p>(B0->K*mumu)', wc, 1.1, 6.0), ('Delta_Ms', wc), ('ACP_mix', wc) ]
+observablesNP = [ ('BR(Bs->mumu)', wcObj), ('BR(B0->mumu)', wcObj), ('<Rmue>(B0->K*ll)', wcObj, 0.045, 1.1), ('<Rmue>(B0->K*ll)', wcObj, 1.1, 6.0), ('<Rmue>(B+->Kll)', wcObj, 1.0, 6.0), ('<P4p>(B0->K*mumu)', wcObj, 1.1, 6.0) , ('<P5p>(B0->K*mumu)', wcObj, 1.1, 6.0), ('Delta_Ms', wcObj), ('ACP_mix', wcObj) ]
 
 	
 def chicalc(l , M, wc):
 	"Chi-squared statistic for the fit"
-	wc.set_initial(wc(l, M), scale=4.8)
+	wcObj.set_initial(wc(l, M), scale=4.8)
 	chi2 = 0
 	for o in range(0, len(observablesNP)):
 		chi2 += ((flavio.np_prediction(*observablesNP[o]) - exp[o] ))**2/(uncTot[o]**2 )
@@ -107,7 +107,7 @@ def chicalc(l , M, wc):
 
 def chicalcRK(l , M, wc):
 	"Chi-squared statistic for the fit to RK(*)-related observables"
-	wc.set_initial(wc(l, M), scale=4.8)
+	wcObj.set_initial(wc(l, M), scale=4.8)
 	chi2 = 0
 	for o in range(0, len(observablesNP)-2):
 		chi2 += ((flavio.np_prediction(*observablesNP[o]) - exp[o] ))**2/(uncTot[o]**2 )
@@ -115,14 +115,14 @@ def chicalcRK(l , M, wc):
 
 def chicalcBs(l , M, wc):
 	"Chi-squared statistic for the fit to Bs-mixing-related observables"
-	wc.set_initial(wc(l, M), scale=4.8)
+	wcObj.set_initial(wc(l, M), scale=4.8)
 	chi2 = 0
 	for o in (-2,-1):
 		chi2 += ((flavio.np_prediction(*observablesNP[o]) - exp[o] ))**2/(uncTot[o]**2 )
 	return chi2
 
 
-def makefit(wc, stepM, stepL, maxM, maxL, filename):
+def makefit(wc, stepM, stepL, maxM, maxL, filename, minM=0, minL=0):
 	'''
 	Fit and print results to file
 	wc: Function that computes Wilson Coefficients from the model parameters (e.g. wc_Z, wc_LQ)
@@ -134,18 +134,20 @@ def makefit(wc, stepM, stepL, maxM, maxL, filename):
 	chitot0 = chiRK0 + chiBs0
 	numM = int(maxM/stepM)
 	numL = int(maxL/stepL)
-	for M in range(1, numM+1):
+	for M in range(int(minM/stepM), numM+1):
 		chi = []
-		for l in range(1, numL+1):
+		for l in range(int(minL/stepL), numL+1):
 			chiRK = chicalcRK(l*stepL, M*stepM*1000, wc)
 			chiBs = chicalcBs(l*stepL, M*stepM*1000, wc)
 			chitot = chiRK + chiBs
 			chi += [(chiRK, chiBs, chitot)]
 		f = open(filename, 'at')
 		f.write(str(M*stepM) + '\t0\t0\t0\t' + str(chiRK0) + '\t' + str(chiBs0) + '\t' + str(chitot0) + '\n' )
-		for l in range(1, numL+1):
+		i = 0		
+		for l in range(int(minL/stepL), numL+1):
 			WCs = wc(l*stepL, M*stepM*1000)
 			C9 = WCs['C9_bsmumu']
 			CVLL = WCs['CVLL_bsbs']
-			f.write(str(M*stepM) + '\t' + str(l*stepL) + '\t'  + str(C9.imag) + '\t' + str(CVLL) + '\t' + str(chi[l-1][0]) + '\t' + str(chi[l-1][1]) + '\t' + str(chi[l-1][2]) + '\n' )
+			f.write(str(M*stepM) + '\t' + str(l*stepL) + '\t'  + str(C9.imag) + '\t' + str(CVLL) + '\t' + str(chi[i][0]) + '\t' + str(chi[i][1]) + '\t' + str(chi[i][2]) + '\n' )
+			i = i+1
 		f.close() 
