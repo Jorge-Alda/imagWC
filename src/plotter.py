@@ -28,21 +28,21 @@ def triang(X):
 	trg_ref, z_ref = refiner.refine_field(X[2], subdiv=3)
 	return [trg_ref, z_ref]
 
-def drawplot(filein, fileout):
+def drawplot(filein, fileout, offtot=0, offBs=0, offRK=0):
 	'''
 	Draw the plot using shaded areas for the global fit and contour lines for Bs-only and RK-only fits
 	'''
 	fig = texfig.figure()
 
-	trgtot_ref, ztot_ref = triang(readfile(filein, -1, 12))
-	plt.tricontourf(trgtot_ref, ztot_ref, levels = [0.0, 1.0, 4.0, 9.0], colors = ('#008000', '#00FF00', '#BFFF80'))
-	trgtot_Bs, ztot_Bs = triang(readfile(filein, -2, 12))
-	plt.tricontour(trgBs_ref, zBs_ref, levels = [1.0, 4.0], colors = 'b', linestyles = ('solid', 'dashed'))
-	trgRK_ref, zRK_ref = triang(readfile(filein, -3, 12))
-	plt.tricontour(trgRK_ref, zRK_ref, levels = [1.0, 4.0], colors = 'r', linestyles = ('solid', 'dashed'))
+	trgtot, ztot = triang(readfile(filein, -1, 12, offtot))
+	plt.tricontourf(trgtot, ztot, levels = [0.0, 1.0, 4.0, 9.0], colors = ('#008000', '#00FF00', '#BFFF80'))
+	trgBs, zBs = triang(readfile(filein, -2, 12, offBs))
+	plt.tricontour(trgBs, zBs, levels = [1.0, 4.0], colors = 'b', linestyles = ('solid', 'dashed'))
+	trgRK, zRK = triang(readfile(filein, -3, 12, offRK))
+	plt.tricontour(trgRK, zRK, levels = [1.0, 4.0], colors = 'r', linestyles = ('solid', 'dashed'))
 
 	plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
-	plt.ylabel(r'$\mathrm{Im}\ y_{32}^{QL} y_{32}^{QL*}$')
+	plt.ylabel(r'$\mathrm{Im}\ y_{32}^{QL} y_{22}^{QL*}$')
 	#axes = plt.gca()
 	#axes.set_ylim([0, 1.5])
 	texfig.savefig(fileout)
