@@ -17,7 +17,6 @@ from flavio.physics.running.running import get_alpha
 import flavio.measurements
 import multiprocessing as mp
 
-cpus = mp.cpu_count()
 
 Parameter('eta_LL')
 flavio.default_parameters.set_constraint('eta_LL', u'0.77 ± 0.02')
@@ -201,7 +200,8 @@ def makefit_complex(wc, stepM, stepL, maxM, maxL, filename, minM=0.1, minL=0):
 	chitot0 = chiRK0 + chiBs0
 	numM = int(maxM/stepM)
 	numL = int(maxL/stepL)
-	pool = mp.Pool(processes = cpus)
+	pool = mp.Pool()
 	results = [pool.apply_async(calc, args=(wc, M*stepM*1000, lR, stepL, maxL, filename, minL)) for M in range(int(minM/stepM), numM+1) for lR in range(int(minL/stepL), numL+1)]
 	results = [p.get() for p in results]
+
 
