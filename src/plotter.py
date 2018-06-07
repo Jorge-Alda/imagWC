@@ -19,6 +19,15 @@ def readfile(filename, col, threshold, offset=0):
 	f.close()
 	return [xtot, ytot, ztot]
 
+def find_min(filename, col):
+	f = open(filename, 'r')
+	minf = 500
+	for l in f.readlines():
+		if float(l.split('\t')[col]) < minf:
+			minf = float(l.split('\t')[col])
+			print(l.split('\t')[0] + '\t' + l.split('\t')[1])
+	f.close()
+
 def triang(X):
 	'''
 	Interpolation by triangulation used to plot contour levels
@@ -34,15 +43,17 @@ def drawplot(filein, fileout, offtot=0, offBs=0, offRK=0):
 	'''
 	fig = texfig.figure()
 
-	trgtot, ztot = triang(readfile(filein, -1, 12, offtot))
+	trgtot, ztot = triang(readfile(filein, -1, 9, offtot))
 	plt.tricontourf(trgtot, ztot, levels = [0.0, 1.0, 4.0, 9.0], colors = ('#008000', '#00FF00', '#BFFF80'))
-	trgBs, zBs = triang(readfile(filein, -2, 12, offBs))
-	plt.tricontour(trgBs, zBs, levels = [1.0, 4.0], colors = 'b', linestyles = ('solid', 'dashed'))
-	trgRK, zRK = triang(readfile(filein, -3, 12, offRK))
-	plt.tricontour(trgRK, zRK, levels = [1.0, 4.0], colors = 'r', linestyles = ('solid', 'dashed'))
+	trgBs, zBs = triang(readfile(filein, -2, 6, offBs))
+	plt.tricontour(trgBs, zBs, levels = [1.0, 4.0], colors = 'b', linestyles = ('-', '--'))
+	trgRK, zRK = triang(readfile(filein, -3, 6, offRK))
+	plt.tricontour(trgRK, zRK, levels = [1.0, 4.0], colors = 'r', linestyles = ('-.', ':'))
 
+	#plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
+	#plt.ylabel(r'$\mathrm{Re}\ y^{QL}_{32}y^{QL*}_{32}$')
 	plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
-	plt.ylabel(r'$\mathrm{Im}\ y_{32}^{QL} y_{22}^{QL*}$')
+	plt.ylabel(r'$\mathrm{Im}\ y^{QL}_{32}y^{QL*}_{32}$')
 	#axes = plt.gca()
 	#axes.set_ylim([0, 1.5])
 	texfig.savefig(fileout)
