@@ -28,7 +28,7 @@ def find_min(filename, col):
 	for l in f.readlines():
 		if float(l.split('\t')[col]) < minf:
 			minf = float(l.split('\t')[col])
-			print(l.split('\t')[0] + '\t' + l.split('\t')[1] + '\t' + minf)
+			print(l.split('\t')[0] + '\t' + l.split('\t')[1] + '\t' + str(minf))
 	f.close()
 
 def triang(X):

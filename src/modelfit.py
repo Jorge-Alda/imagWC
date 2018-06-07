@@ -12,7 +12,7 @@ from flavio.physics.running.running import get_alpha
 from flavio.physics import ckm
 import flavio.measurements
 from wilson import Wilson
-
+from utils import roundC
 
 par = flavio.default_parameters.get_central_all()
 GF = par['GF']
@@ -90,13 +90,13 @@ def chicalcBs(l , M, wc):
 def values(l, M, wc, ps=True):
 	"Values of the observables in a NP scenario. Now in Markdown style"
 	wcObj = Wilson(wc(l, M), scale=M, eft='WET', basis='flavio')
-	print('|C9_bsmumu\t|' + str(wcObj['C9_bsmumu']) + '|')
-	print('|CVLL_bsbs\t|' + str(wcObj['CVLL_bsbs']) + '|')
+	print('|C9_bsmumu\t|' + str(wc(l, M)['C9_bsmumu']) + '|')
+	print('|CVLL_bsbs\t|' + str(wc(l, M)['CVLL_bsbs']) + '|')
 	for o in range(0, len(observables)):
 		if o == len(observables) - 2 and ps:
-			print('|' + observables[o][0] + '\t|' + str(flavio.np_prediction(observables[o][0], wcObj, *observables[o][1:])/flavio.sm_prediction('DeltaM_s')*20.01  ) + '|')
+			print('|' + observables[o][0] + '\t|' + str(roundC(flavio.np_prediction(observables[o][0], wcObj, *observables[o][1:])/flavio.sm_prediction('DeltaM_s')*20.01 ) ) + '|')
 		else:
-			print('|' + observables[o][0] + '\t|' + str(flavio.np_prediction(observables[o][0], wcObj, *observables[o][1:])  ) + '|')
+			print('|' + observables[o][0] + '\t|' + str(roundC(flavio.np_prediction(observables[o][0], wcObj, *observables[o][1:]))  ) + '|')
 
 
 def makefit_imag(wc, stepM, stepL, maxM, maxL, filename, minM=0.1, minL=0):
