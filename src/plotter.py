@@ -1,4 +1,4 @@
-import texfig
+import texfig # https://github.com/knly/texfig
 import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 
@@ -20,12 +20,15 @@ def readfile(filename, col, threshold, offset=0):
 	return [xtot, ytot, ztot]
 
 def find_min(filename, col):
+	'''
+	Finds the minimum of a column in the file
+	'''
 	f = open(filename, 'r')
 	minf = 500
 	for l in f.readlines():
 		if float(l.split('\t')[col]) < minf:
 			minf = float(l.split('\t')[col])
-			print(l.split('\t')[0] + '\t' + l.split('\t')[1])
+			print(l.split('\t')[0] + '\t' + l.split('\t')[1] + '\t' + minf)
 	f.close()
 
 def triang(X):
@@ -37,25 +40,25 @@ def triang(X):
 	trg_ref, z_ref = refiner.refine_field(X[2], subdiv=3)
 	return [trg_ref, z_ref]
 
-def drawplot(filein, fileout, offtot=0, offBs=0, offRK=0):
+def drawplot(filein, fileout, model, offtot=0, offBs=0, offRK=0):
 	'''
 	Draw the plot using shaded areas for the global fit and contour lines for Bs-only and RK-only fits
 	'''
 	fig = texfig.figure()
 
 	trgtot, ztot = triang(readfile(filein, -1, 9, offtot))
-	plt.tricontourf(trgtot, ztot, levels = [0.0, 1.0, 4.0, 9.0], colors = ('#008000', '#00FF00', '#BFFF80'))
+	plt.tricontourf(trgtot, ztot, levels = [0.0, 1.0, 4.0, 9.0], colors = ('#00B400', '#00FF00', '#BFFF80'))
 	trgBs, zBs = triang(readfile(filein, -2, 6, offBs))
 	plt.tricontour(trgBs, zBs, levels = [1.0, 4.0], colors = 'b', linestyles = ('-', '--'))
 	trgRK, zRK = triang(readfile(filein, -3, 6, offRK))
-	plt.tricontour(trgRK, zRK, levels = [1.0, 4.0], colors = 'r', linestyles = ('-.', ':'))
+	plt.tricontour(trgRK, zRK, levels = [1.0, 4.0], colors = '#800000', linestyles = ('-.', ':'))
 
-	#plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
-	#plt.ylabel(r'$\mathrm{Re}\ y^{QL}_{32}y^{QL*}_{32}$')
-	plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
-	plt.ylabel(r'$\mathrm{Im}\ y^{QL}_{32}y^{QL*}_{32}$')
-	#axes = plt.gca()
-	#axes.set_ylim([0, 1.5])
+	if model == 'LQ':
+		plt.xlabel(r"$M_{S_3} [\mathrm{TeV}]$")
+		plt.ylabel(r'$\mathrm{Im}\ y^{QL}_{32}y^{QL*}_{32}$')
+	if model == 'Z':
+		plt.xlabel(r"$M_{Z'} [\mathrm{TeV}]$")
+		plt.ylabel(r'$\mathrm{Im}\ \lambda^Q_{23}$')
 	texfig.savefig(fileout)
 
 
