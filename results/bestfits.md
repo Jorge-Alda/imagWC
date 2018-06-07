@@ -1,6 +1,24 @@
 # Z' Model
 
-## Complex couplings (up to 12TeV)
+## Real couplings
+
+|Parameter|Value|
+|---|---|
+|M	|1.2TeV|
+|lambda^Q	|-0.002|
+|C9_bsmumu	|-0.792-0.0148i|
+|CVLL_bsbs	|-2.78e-12|
+|BR(Bs->mumu)	|2.38e-09|
+|BR(B0->mumu)	|1.14e-10|
+|\<Rmue\>(B0->K\*ll)	|0.837|
+|\<Rmue\>(B0->K\*ll)	|0.666|
+|\<Rmue\>(B+->Kll)	|0.652|
+|\<P4p\>(B0->K\*mumu)	|-0.274|
+|\<P5p\>(B0->K\*mumu)	|-0.256|
+|DeltaM_s	|20.6 ps|
+|S_psiphi	|0.0365|
+
+## Imaginary couplings (up to 12TeV)
 
 |Parameter|Value|
 |---|---|
@@ -21,7 +39,25 @@
 
 # LQ model
 
-## Complex couplings (up to 50TeV)
+## Real couplings
+
+|Parameter|Value|
+|---|---|
+|M	|5.6TeV|
+|yy	|0.04|
+|C9_bsmumu	|-0.712-0.0133i|
+|CVLL_bsbs	|-4.04e-13|
+|BR(Bs->mumu)	|2.5e-09|
+|BR(B0->mumu)	|1.14e-10|
+|\<Rmue\>(B0->K\*ll)	|0.846|
+|\<Rmue\>(B0->K\*ll)	|0.697|
+|\<Rmue\>(B+->Kll)	|0.685|
+|\<P4p\>(B0->K\*mumu)	|-0.284|
+|\<P5p\>(B0->K\*mumu)	|-0.280|
+|DeltaM_s	|20.1 ps|
+|S_psiphi	|0.0374|
+
+## Imaginary couplings (up to 50TeV)
 
 |Parameter|Value|
 |---|---|
