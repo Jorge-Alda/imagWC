@@ -12,8 +12,8 @@
 |CVLL_bsbs	|-2.78e-12|
 |BR(Bs->mumu)	|2.38e-09|
 |BR(B0->mumu)	|1.14e-10|
-|\<Rmue\>(B0->K\*ll)	|0.837|
-|\<Rmue\>(B0->K\*ll)	|0.666|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.837|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|0.666|
 |\<Rmue\>(B+->Kll)	|0.652|
 |\<P4p\>(B0->K\*mumu)	|-0.274|
 |\<P5p\>(B0->K\*mumu)	|-0.256|
@@ -32,15 +32,15 @@
 |CVLL_bsbs	|9.0e-12|
 |BR(Bs->mumu)	|3.596e-09|
 |BR(B0->mumu)	|1.135e-10|
-|\<Rmue\>(B0->K\*ll)	|0.926|
-|\<Rmue\>(B0->K\*ll)	|0.997|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.926|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|0.997|
 |\<Rmue\>(B+->Kll)	|1.00|
 |\<P4p\>(B0->K\*mumu)	|-0.354|
 |\<P5p\>(B0->K\*mumu)	|-0.445|
 |DeltaM_s	|18.2 ps|
 |S_psiphi	|0.0411|
 
-##Complex couplings
+## Complex couplings
 
 |Parameter|Value|
 |---|---|
@@ -52,8 +52,8 @@
 |CVLL_bsbs	|(0.3058-5.653i)e-12|
 |BR(Bs->mumu)	|2.4700000000000004e-09|
 |BR(B0->mumu)	|1.14e-10|
-|\<Rmue\>(B0->K\*ll)	|0.850|
-|\<Rmue\>(B0->K\*ll)	|0.707|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.850|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|0.707|
 |\<Rmue\>(B+->Kll)	|0.685|
 |\<P4p\>(B0->K\*mumu)	|-0.289|
 |\<P5p\>(B0->K\*mumu)	|-0.298|
@@ -75,8 +75,8 @@
 |CVLL_bsbs	|-4.04e-13|
 |BR(Bs->mumu)	|2.5e-09|
 |BR(B0->mumu)	|1.14e-10|
-|\<Rmue\>(B0->K\*ll)	|0.846|
-|\<Rmue\>(B0->K\*ll)	|0.697|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.846|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|0.697|
 |\<Rmue\>(B+->Kll)	|0.685|
 |\<P4p\>(B0->K\*mumu)	|-0.284|
 |\<P5p\>(B0->K\*mumu)	|-0.280|
@@ -95,8 +95,8 @@
 |CVLL_bsbs	|2.92e-12|
 |BR(Bs->mumu)	|3.61e-09|
 |BR(B0->mumu)	|1.14e-10|
-|\<Rmue\>(B0->K\*ll)	|0.927|
-|\<Rmue\>(B0->K\*ll)	|1.00|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.927|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|1.00|
 |\<Rmue\>(B+->Kll)	|1.00|
 |\<P4p\>(B0->K\*mumu)	|-0.355|
 |\<P5p\>(B0->K\*mumu)	|-0.447|
@@ -107,7 +107,6 @@
 
 |Parameter|Value|
 |---|---|
-
 |M	|9.79 TeV|
 |yy	|0.16+0.18i|
 |pull	|5.17|
@@ -116,8 +115,8 @@
 |CVLL_bsbs	|(0.562-4.76i)e-12j|
 |BR(Bs->mumu)	|2.43e-09|
 |BR(B0->mumu)	|1.14e-10|
-|\<Rmue\>(B0->K\*ll)	|0.849|
-|\<Rmue\>(B0->K\*ll)	|0.701|
+|\<Rmue\>(B0->K\*ll) [0.045,1.1]GeV2	|0.849|
+|\<Rmue\>(B0->K\*ll) [1.1,6]GeV2	|0.701|
 |\<Rmue\>(B+->Kll)	|0.675|
 |\<P4p\>(B0->K\*mumu)	|-0.288|
 |\<P5p\>(B0->K\*mumu)	|-0.299|
