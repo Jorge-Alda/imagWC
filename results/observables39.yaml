@@ -1,0 +1,117 @@
+- central: 0.652542372881356
+  error: 0.0962111833541446
+  obs: !!python/tuple [<Rmue>(B0->K*ll), 0.045, 1.1]
+- central: 0.6813559322033899
+  error: 0.10385280468479775
+  obs: !!python/tuple [<Rmue>(B0->K*ll), 1.1, 6.0]
+- central: 0.745
+  error: 0.09060949396261198
+  obs: !!python/tuple [<Rmue>(B+->Kll), 1.0, 6.0]
+- central: -0.336
+  error: 0.13004610774904296
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 1.1, 6]
+- central: -0.049
+  error: 0.13390527327657417
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 1.1, 6]
+- central: 0.39
+  error: 0.5918376286621664
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 0.04, 2]
+- central: -0.96
+  error: 0.4911879958937868
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 2, 4]
+- central: 0.81
+  error: 0.47671768094651806
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 4, 6]
+- central: -0.38
+  error: 0.382036055518843
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 0.04, 4]
+- central: 0.07
+  error: 0.32508814351563836
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 1.1, 6]
+- central: 0.07
+  error: 0.31301525500852756
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 0.04, 6]
+- central: 0.67
+  error: 0.3141521591064132
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 0.04, 2]
+- central: -0.33
+  error: 0.3423710618890422
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 2, 4]
+- central: 0.26
+  error: 0.4004506700934809
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 4, 6]
+- central: 0.32
+  error: 0.24338565716231375
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 0.04, 4]
+- central: 0.01
+  error: 0.23553358273844388
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 1.1, 6]
+- central: 0.27
+  error: 0.20809501218489299
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 0.04, 6]
+- central: 0.1
+  error: 0.3387489815647257
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 1, 2]
+- central: -0.57
+  error: 0.37331113672618216
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 2, 4.3]
+- central: -0.96
+  error: 0.276237266176386
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 4.3, 6]
+- central: -0.64
+  error: 0.2294125806433933
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 6, 8.68]
+- central: -0.66
+  error: 0.25315342000593266
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 14.18, 16]
+- central: -0.56
+  error: 0.1425870980921911
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 16, 19]
+- central: 0.185
+  error: 0.15352754006689037
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 0.1, 0.98]
+- central: 0.387
+  error: 0.14180137270244486
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 0.1, 0.98]
+- central: -0.163
+  error: 0.23774397731236782
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 1.1, 2.5]
+- central: 0.289
+  error: 0.22055012734775875
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 1.1, 2.5]
+- central: -0.713
+  error: 0.7465541202624155
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 2.5, 4]
+- central: -0.066
+  error: 0.36497864277053166
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 2.5, 4]
+- central: -0.448
+  error: 0.16650024984923198
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 4, 6]
+- central: -0.3
+  error: 0.17105085354665203
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 4, 6]
+- central: -0.599
+  error: 0.13392422878286264
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 6, 8]
+- central: -0.505
+  error: 0.1402068770662938
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 6, 8]
+- central: -0.672
+  error: 0.12900386032722935
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 15, 17]
+- central: -0.662
+  error: 0.12687924727314928
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 15, 17]
+- central: -0.556
+  error: 0.14231375270216734
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 17, 19]
+- central: -0.676
+  error: 0.15442039443888406
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 17, 19]
+- central: -0.597
+  error: 0.0837273917307535
+  obs: !!python/tuple [<P4p>(B0->K*mumu), 15, 19]
+- central: -0.684
+  error: 0.08632982599394888
+  obs: !!python/tuple [<P5p>(B0->K*mumu), 15, 19]
